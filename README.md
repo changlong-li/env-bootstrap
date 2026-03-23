@@ -18,8 +18,9 @@ bash setup.sh
 
 ## Adding a New Package
 
-Edit `setup.sh` and append a line below the `── 在此处继续添加新的包 ──` comment:
+Simply edit the `packages.txt` file and append the names of the packages you want to install, one per line. Comments starting with `#` are also supported:
 
-```bash
-pip install -U <package> && info "<package> installed" || error "<package> failed"
+```text
+# Your comment here
+your_new_package_name
 ```

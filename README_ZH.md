@@ -18,8 +18,9 @@ bash setup.sh
 
 ## 添加新包
 
-编辑 `setup.sh`，在注释 `── 在此处继续添加新的包 ──` 下方追加一行即可：
+直接编辑 `packages.txt` 文件，将需要安装的包名换行追加到文件中即可。支持添加注释（以 `#` 开头）：
 
-```bash
-pip install -U <package> && info "<package> 安装成功" || error "<package> 安装失败"
+```text
+# 这里写注释
+your_new_package_name
 ```

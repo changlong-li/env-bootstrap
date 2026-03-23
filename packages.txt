@@ -1,0 +1,5 @@
+# Hugging Face 基础库
+huggingface_hub
+
+# Hugging Face 的高速下载工具
+hf_transfer
