@@ -16,7 +16,7 @@ error() {
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PACKAGE_FILE="$SCRIPT_DIR/packages.txt"
-BUNDLE_DIR="${1:-$SCRIPT_DIR/offline_bundle}"
+BUNDLE_DIR="${1:-$HOME/Downloads/env-bootstrap-offline-bundle}"
 
 if ! command -v brew >/dev/null 2>&1; then
     error "本地机器未检测到 Homebrew，无法准备离线包"

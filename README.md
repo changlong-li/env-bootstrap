@@ -42,13 +42,13 @@ Offline mode (server cannot access GitHub):
 1) Prepare offline bundle on local machine with internet
 
 ```bash
-bash system/prepare_offline_bundle.sh /tmp/offline_bundle
+bash system/prepare_offline_bundle.sh
 ```
 
 2) Upload bundle to server
 
 ```bash
-scp -r /tmp/offline_bundle <user>@<host>:/path/to/offline_bundle
+scp -r ~/Downloads/env-bootstrap-offline-bundle <user>@<host>:/path/to/offline_bundle
 ```
 
 3) Run offline installation on server

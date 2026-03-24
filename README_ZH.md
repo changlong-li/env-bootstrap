@@ -42,13 +42,13 @@ bash system/setup_system.sh
 1) 在本地联网机器准备离线包
 
 ```bash
-bash system/prepare_offline_bundle.sh /tmp/offline_bundle
+bash system/prepare_offline_bundle.sh
 ```
 
 2) 上传到服务器指定目录
 
 ```bash
-scp -r /tmp/offline_bundle <user>@<host>:/path/to/offline_bundle
+scp -r ~/Downloads/env-bootstrap-offline-bundle <user>@<host>:/path/to/offline_bundle
 ```
 
 3) 在服务器执行离线安装
