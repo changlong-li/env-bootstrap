@@ -17,6 +17,8 @@ bash python/setup_python.sh
 - `system/setup_system.sh`: install system packages with online/offline modes
 - `system/packages.txt`: system package list
 - `system/prepare_offline_bundle.sh`: prepare offline bundle on a connected local machine
+- `system/upload_offline_bundle.sh`: upload offline bundle to remote server
+- `system/upload_config.example`: upload config template
 
 ## Package List
 
@@ -45,13 +47,21 @@ Offline mode (server cannot access GitHub):
 bash system/prepare_offline_bundle.sh
 ```
 
-2) Upload bundle to server
+2) Create upload config (keep personal values local)
 
 ```bash
-scp -r ~/Downloads/env-bootstrap-offline-bundle <user>@<host>:/path/to/offline_bundle
+cp system/upload_config.example system/upload_config.local
 ```
 
-3) Run offline installation on server
+Edit `system/upload_config.local` and fill at least `SSH_HOST_ALIAS` or `REMOTE_HOST`, and `REMOTE_DIR`.
+
+3) Upload bundle to server
+
+```bash
+bash system/upload_offline_bundle.sh
+```
+
+4) Run offline installation on server
 
 ```bash
 bash system/setup_system.sh --offline-bundle /path/to/offline_bundle --brew-prefix $HOME/.linuxbrew

@@ -1,0 +1,7 @@
+BUNDLE_DIR="$HOME/Downloads/env-bootstrap-offline-bundle"
+SSH_HOST_ALIAS=""
+REMOTE_USER=""
+REMOTE_HOST=""
+REMOTE_DIR="/path/to/offline_bundle"
+SSH_PORT=""
+IDENTITY_FILE=""

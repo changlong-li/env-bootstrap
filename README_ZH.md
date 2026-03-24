@@ -17,6 +17,8 @@ bash python/setup_python.sh
 - `system/setup_system.sh`：安装系统级包（在线/离线双模式）
 - `system/packages.txt`：系统包清单
 - `system/prepare_offline_bundle.sh`：在联网本地机准备离线安装包
+- `system/upload_offline_bundle.sh`：上传离线包到远程服务器
+- `system/upload_config.example`：上传配置模板
 
 ## 当前包清单
 
@@ -45,13 +47,21 @@ bash system/setup_system.sh
 bash system/prepare_offline_bundle.sh
 ```
 
-2) 上传到服务器指定目录
+2) 准备上传配置（个人信息不入库）
 
 ```bash
-scp -r ~/Downloads/env-bootstrap-offline-bundle <user>@<host>:/path/to/offline_bundle
+cp system/upload_config.example system/upload_config.local
 ```
 
-3) 在服务器执行离线安装
+编辑 `system/upload_config.local`，至少填写 `SSH_HOST_ALIAS` 或 `REMOTE_HOST`，以及 `REMOTE_DIR`。
+
+3) 上传到服务器指定目录
+
+```bash
+bash system/upload_offline_bundle.sh
+```
+
+4) 在服务器执行离线安装
 
 ```bash
 bash system/setup_system.sh --offline-bundle /path/to/offline_bundle --brew-prefix $HOME/.linuxbrew
